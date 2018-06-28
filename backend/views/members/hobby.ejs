@@ -1,0 +1,19 @@
+<h1 class="display-4"><%= users.name %></h1>   
+<div class ="form-group">
+    <form action="/Hobbies/addhobby" method="POST">
+      <textarea class= "form-control" name="title"  cols="20" rows="2"></textarea><br />
+      <input type="submit"  value="Add Hobby" class="btn btn-primary">
+    </form>
+</div>
+<div class="row">
+    <% _.each(users.hobbies,function(hobby){ %>
+      <div class="card" style="width: 10rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= hobby.hobbies %></h5>
+          <a href="/hobbies/delete/<%= hobby.id %>" class="btn btn-danger">delete</a>
+        </div>
+      </div> <br /><br /><br /> 
+    <% }) %>
+  
+</div>
+

@@ -1,0 +1,19 @@
+<form action ="/members/create" method="POST">
+    <% if (req.session.errorMessage) { %>
+        <p class= "alert alert-danger"><%= JSON.stringify(req.session.errorMessage) %></p>
+    <% } %>    
+    <div>
+    <label> Username: </label>
+    <input type="text" name="name" class="form-control" />
+    <label> Password: </label>
+    <input type="password" name="password" class ="form-control" />
+    <label> E-mail: </label>
+    <input type="email" name="email" class ="form-control" />
+    <label> Phone No: </label>
+    <input type="number" name="number" class ="form-control" />
+    </div><br />
+    <div> 
+        <input type="submit" value="Sign Up" class=btn btn-primary />
+        <p class="mb4">Already Have An Account?<a class="mb4"href="/members/enter">click here</a></p>
+    </div>
+</form>

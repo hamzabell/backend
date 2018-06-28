@@ -1,0 +1,15 @@
+<form action ="/members/loggin" method="POST">
+    <% if (req.session.loginError) { %>
+        <p class= "alert alert-danger"><%= JSON.stringify(req.session.loginError) %></p>
+    <% } %>    
+    <div>
+    <label> Username: </label>
+    <input type="text" name="name" class="form-control" />
+    <label> Password: </label>
+    <input type="password" name="password" class ="form-control" />
+    </div><br />
+    <div> 
+        <input type="submit" value="Log in" class=btn btn-primary />
+        <p class="mb4">Don't Have An account?<a class="mb4"href="/members/signup">click here</a></p>
+    </div>
+</form>
